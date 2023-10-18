@@ -16,6 +16,17 @@ const fetchBreeds = () => {
     .get('https://api.thecatapi.com/v1/breeds')
     .then(response => response.data)
     .catch(error => {
+      // Виводимо помилку у консоль
+      console.error('Error fetching breeds:', error);
+
+      // Показуємо повідомлення про помилку
+      error.style.display = 'block';
+
+      // Сховати інші елементи
+      loader.style.display = 'none';
+      breedSelect.style.display = 'none';
+
+      // Викидуємо помилку, щоб відобразити її на рівні виклику
       throw error;
     });
 };
@@ -25,6 +36,17 @@ const fetchCatByBreed = breedId => {
     .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
     .then(response => response.data)
     .catch(error => {
+      // Виводимо помилку у консоль
+      console.error('Error fetching cat information:', error);
+
+      // Показуємо повідомлення про помилку
+      error.style.display = 'block';
+
+      // Сховати інші елементи
+      loader.style.display = 'none';
+      catInfo.style.display = 'none';
+
+      // Викидуємо помилку, щоб відобразити її на рівні виклику
       throw error;
     });
 };
@@ -45,9 +67,7 @@ const populateBreeds = () => {
       breedSelect.style.display = 'block';
     })
     .catch(err => {
-      loader.style.display = 'none';
-      error.style.display = 'block';
-      console.error('Error fetching breeds:', err);
+      // Обробка помилки вже включена у функції fetchBreeds
     });
 };
 
@@ -83,9 +103,7 @@ const fetchCatInfo = breedId => {
       catInfo.style.display = 'block';
     })
     .catch(err => {
-      loader.style.display = 'none';
-      error.style.display = 'block';
-      console.error('Error fetching cat information:', err);
+      // Обробка помилки вже включена у функції fetchCatByBreed
     });
 };
 
