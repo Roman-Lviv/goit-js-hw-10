@@ -1,6 +1,6 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-import SlimSelect from 'slim-select';
+// import SlimSelect from 'slim-select';
 
 axios.defaults.headers.common['x-api-key'] = 'твій ключ';
 
