@@ -1,7 +1,7 @@
-// cat-api.js
 import axios from 'axios';
 
-axios.defaults.headers.common['x-api-key'] = 'твій ключ';
+axios.defaults.headers.common['x-api-key'] =
+  'live_NhSrRxtwZj7uypmgbjo4Tmh4DCoEpAzSYngICE3X5fge2sZZWwQja8SMmW7HlaJe';
 
 const fetchBreeds = () => {
   return axios
