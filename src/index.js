@@ -18,12 +18,8 @@ const populateBreeds = () => {
         value: breed.id,
       }));
       select.setData(options);
-      select.set('placeholder', 'Select a breed');
-      select.set('searchable', true);
-      select.set('searchPlaceholder', 'Search for a breed');
-      select.set('onChange', info => fetchCatInfo(info.value));
+
       loader.style.display = 'none';
-      breedSelect.style display = 'block';
     })
     .catch(err => {
       loader.style.display = 'none';
@@ -32,12 +28,10 @@ const populateBreeds = () => {
     });
 };
 
-const fetchCatInfo = breedId => {
-  
-};
+const fetchCatInfo = breedId => {};
 
 select = new SlimSelect({
-  select: breedSelect,
+  select: '#breedSelect',
   placeholder: 'Loading breeds...',
 });
 
