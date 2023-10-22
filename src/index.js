@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
 
 axios.defaults.headers.common['x-api-key'] = 'твій ключ';
 
