@@ -14,7 +14,9 @@ const fetchBreeds = () => {
 
 const fetchCatByBreed = breedId => {
   return axios
-    .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
+    .get(
+      'live_NhSrRxtwZj7uypmgbjo4Tmh4DCoEpAzSYngICE3X5fge2sZZWwQja8SMmW7HlaJe'
+    )
     .then(response => response.data)
     .catch(error => {
       throw error;
