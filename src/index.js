@@ -25,7 +25,7 @@ const populateBreeds = () => {
       loader.style.display = 'none';
     })
     .catch(err => {
-      loader.style display = 'none';
+      loader.style.display = 'none';
       error.style.display = 'block';
       console.error('Error fetching breeds:', err);
     });
