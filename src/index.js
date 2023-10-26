@@ -25,7 +25,7 @@ const populateBreeds = () => {
       loader.style.display = 'none';
     })
     .catch(err => {
-      loader.style.display = 'none';
+      loader.style display = 'none';
       error.style.display = 'block';
       console.error('Error fetching breeds:', err);
     });
@@ -39,16 +39,16 @@ const fetchCatInfo = breedId => {
   fetchCatByBreed(breedId)
     .then(catData => {
       const catImage = document.createElement('img');
-      catImage.src = catData.url;
+      catImage.src = catData[0].url;
 
       const catName = document.createElement('p');
-      catName.textContent = `Breed: ${catData.breeds[0].name}`;
+      catName.textContent = `Breed: ${catData[0].breeds[0].name}`;
 
       const catDescription = document.createElement('p');
-      catDescription.textContent = `Description: ${catData.breeds[0].description}`;
+      catDescription.textContent = `Description: ${catData[0].breeds[0].description}`;
 
       const catTemperament = document.createElement('p');
-      catTemperament.textContent = `Temperament: ${catData.breeds[0].temperament}`;
+      catTemperament.textContent = `Temperament: ${catData[0].breeds[0].temperament}`;
 
       catInfo.appendChild(catImage);
       catInfo.appendChild(catName);
