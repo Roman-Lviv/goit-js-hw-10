@@ -35,5 +35,28 @@ fetchBreeds()
   });
 
 function onChange(e) {
-  fetchCatByBreed(e.target.value).then(console.log);
+  fetchCatByBreed(e.target.value)
+    .then(response => {
+      if (response && response.length > 0) {
+        const catData = response[0];
+        const catInfo = document.querySelector('.cat-info');
+
+        const catTemplate = `
+            <div class="cat-card">
+              <img src="${catData.url}" alt="Cat">
+              <h2>Name: ${catData.name}</h2>
+              <p>Breed: ${catData.breed}</p>
+              <p>Age: ${catData.age}</p>
+            </div>
+          `;
+
+        catInfo.innerHTML = catTemplate;
+      } else {
+        const catInfo = document.querySelector('.cat-info');
+        catInfo.innerHTML = 'No cat data available.';
+      }
+    })
+    .catch(err => {
+      console.error('Error fetching cat data:', err);
+    });
 }
